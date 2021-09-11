@@ -1,0 +1,351 @@
+/* all */
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:wght@400;700&family=Montserrat:wght@400;500;700;900&display=swap');
+.app{
+    background: #1d1d1d;
+    display: grid;
+    color: #fff;
+    grid-template-areas: 
+        "header"
+        "content"
+        "footer";
+    grid-template-columns: auto;
+    grid-template-rows: 10vh auto 25vh;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+.border{
+    padding: 1rem 4rem 1rem 1rem;
+    border-bottom: 2px solid #1d1d1d;
+    border-left: 2px solid #1d1d1d;
+    border-end-start-radius: 15px;
+    margin-top: 2rem;
+}
+.border_shadow{
+    box-shadow: 0 0 0.75rem #1d1d1d44;
+    border-radius: 15px;
+}
+.title{
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-family: 'Lobster Two', cursive;
+}
+strong{
+    font-weight: 700;
+}
+/* -------- 
+header */
+.header {
+    grid-area: header;
+}
+.navbar{
+    margin: 0 2rem;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar_link{
+    text-decoration: none;
+    color: #fff;
+}
+/* --------
+content */
+.content {
+    background: #f0f0f0;
+    color: #1d1d1d;
+    grid-area: content;
+    margin: 0 2rem;
+    padding: 2rem;
+    border-radius: 0.5%;
+    display: grid;
+    grid-template-areas: 
+        "biografia"
+        "competencias"
+        "formacao"
+        "experiencia"
+        "trabalhos";
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto auto auto 25%;
+}
+.biografia_section{
+    grid-area: biografia;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 0;
+}
+    .biografia_section__header{
+        flex-grow: 1;
+    }
+    .biografia_section__article{
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        flex-grow: 10;
+    }
+        .biografia_section__article___text{
+            line-height: 1.2rem;
+            flex-grow: 1;
+        }
+        .biografia_section__article___footer{
+            display: flex;
+            align-items: center;
+            flex-grow: 2;
+            margin: 1rem;
+        }
+        .biografia_section__article___footer a{
+            margin: 0 1rem;
+        }
+        .biografia_section__article___footer a img{
+            filter: drop-shadow(0 0 0.1rem #000);
+            height: 3rem;
+        }
+        .img_sem__sombra{
+            filter: drop-shadow(0 0 0 #000000) !important;
+        }
+.competencias_section, .formacao_section, .experiencia_section, .trabalhos_section {
+    grid-area: competencias;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+    .competencias_section__header, .formacao_section__header, .experiencia_section__header, .trabalhos_section__header {
+        flex-grow: 1;
+    }
+    .competencias_section__article, .formacao_section__article, .experiencia_section__article, .trabalhos_section__article{
+        flex-grow: 10;
+    }
+        .competencias_section__article___table, .formacao_section__article___table{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .competencias_section__article___table tbody, .formacao_section__article___table tbody{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+            .competencias_section__article___table____row, .formacao_section__article___table____row{
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin: 0.5rem auto;
+                text-align: center;
+                padding: 1rem;
+                flex-grow: 1;
+            }
+            .competencias_section__article___table____row:nth-child(n+2){
+                border: 1px solid #1d1d1d55;
+                border-radius: 15px;
+                margin: 0.1rem auto;
+            }
+            .competencias_section__article___table____row:nth-child(even){
+                background: #1d1d1d11;
+            }
+                .competencias_section__article___table____row_____title, .formacao_section__article___table____row_____title{
+                    font-weight: 700;
+                    font-size: 1.3rem;
+                    width: 33.33%
+                }
+                .competencias_section__article___table____row_____content, .formacao_section__article___table____row_____content{
+                    width: 33.33%
+                }
+.formacao_section{
+    grid-area: formacao;
+}
+    .formacao_section__article___table____row:nth-child(1){
+        background-color: #217cf377;
+    }
+    .formacao_section__article___table____row:nth-child(n+2){
+        border: 1px solid #1d1d1d55;
+        border-radius: 15px;
+        border-top-left-radius: 70px;
+        border-bottom-right-radius: 70px;
+        margin: 0.1rem auto;
+    }
+    .formacao_section__article___table____row:nth-child(even){
+        background: #217cf322;
+    }
+    .formacao_section__article___table____row:nth-child(odd){
+        border-radius: 15px;
+        border-start-end-radius: 70px;
+        border-end-start-radius: 70px;
+    }
+.experiencia_section{
+    grid-area: experiencia;
+    display: block;
+    background: linear-gradient(#1d1d1d00, #217cf322, #217cf377, #217cf322, #1d1d1d00)
+}
+    .experiencia_section__article___cards{
+        display: flex;
+        flex-flow: row wrap;
+    }
+    .experiencia_section__article___cards____card{
+        width: calc(33.33% - 4rem - 2px);
+        height: auto;
+        border: 1px solid #1d1d1d55;
+        box-shadow: 0.5rem 0.5rem 0.1rem #1f1f1f33;
+        border-radius: 15px;
+        padding: 0 1rem 1rem 1rem;
+        margin: 1rem 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: #f0f0f0;
+    }
+    .experiencia_section__article___cards____card_____image{
+        height: 7rem;
+        object-fit: cover;
+        object-position: center;
+        align-self: center;
+        margin: 1rem 0;
+    }
+    .experiencia_section__article___cards____card div{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        flex: 1 1 auto;
+    }
+    .experiencia_section__article___cards____card_____header{
+        font-family: 'Lobster Two';
+        font-weight: 700;
+        font-size: 1.5rem;
+        margin: 1rem 0 0 0;
+        padding: 1rem;
+        width: 80%;
+        border-top: 1px solid #1d1d1d55;
+    }
+    .experiencia_section__article___cards____card_____text{
+        margin-bottom: 1rem;
+        line-height: 1.3;
+    }
+    .experiencia_section__article___cards____card_____table{
+        width: 100%;
+        margin: 1rem;
+        box-shadow: 0 0 0.3rem #1d1d1d22;
+        border-radius: 15px;
+        background-color: #f0f0f0;
+    }
+    .experiencia_section__article___cards____card_____table tbody{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .experiencia_section__article___cards____card_____table_____row{
+        width: 100%;
+        padding: 0.5rem;
+        display: flex;
+        justify-content: space-between;
+    }
+    .experiencia_section__article___cards____card_____table_____row_____title{
+        font-family: 'Lobster Two';
+        font-size: 1.5rem;
+        width: 50%;
+    }
+    .experiencia_section__article___cards____card_____table_____row_____content{
+        width: 50%;
+    }
+.trabalhos_section{
+    grid-area: trabalhos;
+    display: block;
+    overflow: auto;
+}
+.trabalhos_section__article___cards{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.trabalhos_section__article___cards____card{
+    width: 100%;
+    height: auto;
+    border: 3px dashed #1d1d1d;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1rem;
+    margin: 0.5rem auto;
+    text-decoration: none;
+    color: #f0f0f0;
+    background: #1d1d1de5;
+    box-shadow: 0 0 1rem #1d1d1d
+}
+.trabalhos_section__article___cards____card_____image{
+    object-fit: cover;
+    height: 7rem;
+    object-position: center;
+    align-self: flex-start;
+}
+.trabalhos_section__article___cards____card_____title{
+    font-family: 'Lobster Two';
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+.trabalhos_section__article___cards____card_____text{
+    line-height: 1.2;
+}
+/* --------
+footer */
+.footer {
+    grid-area: footer;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.creditos_section{
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ffffffd9;
+}
+.creditos_section__header{
+    font-family: 'Lobster Two';
+    font-family: 700;
+    font-size: 1.2rem;
+}
+.creditos_section__article{
+    font-size: 0.7rem;
+    margin: 1rem;
+}
+.creditos_section__article__text{
+    margin: 0.5rem;
+}
+.creditos_section__footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 20%;
+}
+.creditos_section__footer___link{
+    width: 100%;
+}
+.creditos_section__footer___link img{
+    height: auto;
+    width: 40%;
+}
+
+@media (max-width: 900px) {
+    .experiencia_section__article___cards____card{
+        width: calc(100% - 1rem);
+        align-self: center;
+    }
+}
