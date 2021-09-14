@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
@@ -19,6 +19,14 @@
             <a class="navbar_link" href="#formacao">Formação</a>
             <a class="navbar_link" href="#experiencia">Experiência</a>
             <a class="navbar_link" href="#trabalhos">Trabalhos</a>
+            <div class="theme_switch_div">
+                <label class="theme_switch_div__label" for="checkbox">
+                    <input type="checkbox" id="checkbox" hidden/>
+                    <div class="track">
+                        <div class="thumb"></div>
+                    </div>
+                </label>
+            </div>
         </nav>
     </header>
     <main class="content">
@@ -247,5 +255,6 @@
             </footer>
         </section>
     </footer>
+    <script src="../js/themeSwitcher.js"></script>
 </body>
 </html>
