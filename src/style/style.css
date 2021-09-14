@@ -5,19 +5,21 @@
     --border-color-55: #1d1d1d55;
     --background: #1d1d1d;
     --background-color-e5: #1d1d1de5;
-    --font-color: #fff;
+    --font-color: #1d1d1d;
     --color-white-weak: #f0f0f0;
     --azul-fraco: #217cf377;
     --azul-transparent: #217cf322;
+    --nav-bar-color: #f0f0f0;
 }
 [data-theme="dark"]{
     --border-color-55: #ffffff82;
-    --background: #f0f0f0;
-    --background-color-e5: #f0f0f055;
-    --font-color: #000;
+    --background: #111a25;
+    --background-color-e5: #f3212122;
+    --font-color: #f0f0f0;
     --color-white-weak: #1d1d1d;
     --azul-fraco: #f3212177;
     --azul-transparent: #f3212122;
+    --nav-bar-color: #f0f0f0;
 }
 
 .app{
@@ -68,7 +70,16 @@ header */
 }
 .navbar_link{
     text-decoration: none;
-    color: var(--font-color);
+    color: var(--nav-bar-color);
+    font-size: 1.2em;
+    transition: all 0.3s;
+    border-bottom: 0px solid var(--azul-fraco);
+    padding: 0.5rem;
+    border-radius: 15px;
+}
+.navbar_link:hover{
+    font-size: 1.5rem;
+    border-bottom: 7px solid var(--azul-fraco);
 }
 .theme_switch_div__label{
     --track-width: 48px;
@@ -85,6 +96,7 @@ header */
     width: var(--track-width);
     height: var(--thumb-size);
     border-radius: var(--border-radius);
+    border: 1px solid var(--nav-bar-color);
     transition: all 0.3s;
 }
 .theme_switch_div__label .thumb{
@@ -105,7 +117,7 @@ header */
 content */
 .content {
     background: var(--color-white-weak);
-    color: var(--background);
+    color: var(--font-color);
     grid-area: content;
     margin: 0 2rem;
     padding: 2rem;
@@ -150,9 +162,13 @@ content */
         }
         .biografia_section__article___footer a{
             margin: 0 1rem;
+            transition: all 0.3s;
+        }
+        .biografia_section__article___footer a:hover{
+            transform: scale(1.2);
         }
         .biografia_section__article___footer a img{
-            filter: drop-shadow(0 0 0.1rem #000);
+            filter: drop-shadow(0 0 0.05rem #000);
             height: 3rem;
         }
         .img_sem__sombra{
@@ -202,7 +218,7 @@ content */
             }
             .competencias_section__article___table____row:nth-child(even){
                 background: var(--background-color-e5);
-                color: var(--font-color);
+                color: var(--nav-bar-color);
             }
                 .competencias_section__article___table____row_____title, .formacao_section__article___table____row_____title{
                     font-weight: 700;
@@ -249,12 +265,12 @@ content */
         border-radius: 15px;
         box-shadow: 0 0 0.75rem var(--border-color-55);
         text-align: center;
-        padding: 1rem;
         display: grid;
         grid-template-rows: auto auto;
         justify-items: center;
     }
     .experiencia_section__article___cards____card div{
+        padding: 1rem;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -265,8 +281,15 @@ content */
         font-weight: 700;
         margin: 1rem 0;
     }
+    .background__image{
+        padding: 1rem 0 !important;
+        width: 100%;
+        background: #f0f0f0;
+        border-radius: 15px 15px 0 0;
+        align-items: center;
+    }
     .experiencia_section__article___cards____card_____image{
-        height: 6rem;
+        height: 12rem;
         object-fit: cover;
         object-position: center;
     }
@@ -319,9 +342,13 @@ content */
     padding: 1rem;
     margin: 0.5rem auto;
     text-decoration: none;
-    color: var(--color-white-weak);
+    color: var(--nav-bar-color);
     background: var(--background-color-e5);
-    box-shadow: 0 0 1rem var(--background)
+    box-shadow: 0 0 1rem var(--background);
+    transition: all 0.3s;
+}
+.trabalhos_section__article___cards____card:hover{
+    transform: scale(1.01);
 }
 .trabalhos_section__article___cards____card_____image{
     object-fit: cover;
@@ -354,7 +381,7 @@ footer */
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: var(--color-white-weak);
+    color: var(--nav-bar-color);
 }
 .creditos_section__header{
     font-family: 'Lobster Two';
@@ -376,15 +403,42 @@ footer */
 }
 .creditos_section__footer___link{
     width: 100%;
+    transition: all 0.3s;
+}
+.creditos_section__footer___link:hover{
+    filter: drop-shadow(0 0 0.5rem var(--azul-fraco));
+    transform: scale(1.2);
 }
 .creditos_section__footer___link img{
     height: auto;
     width: 40%;
 }
+.foto_perfil{
+    border-radius: 50%;
+    height: 13rem;
+    width: 13rem;
+    object-fit: cover;
+}
 
 @media (max-width: 900px) {
+    .app{
+        font-size: 1.5rem;
+        padding: 5rem;
+    }
+    .navbar_link{
+        font-size: 2rem;
+    }
     .experiencia_section__article___cards____card{
         width: calc(100% - 1rem);
         align-self: center;
+    }
+    .title {
+        font-size: 4rem;
+    }
+    .trabalhos_section__article___cards____card_____title{
+        font-size: 3rem;
+    }
+    .experiencia_section__article___cards____card_____header{
+        font-size: 2rem;
     }
 }
